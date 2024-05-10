@@ -1,0 +1,78 @@
+import React, { useEffect, useState, createContext } from "react";
+import { getAllProducts } from "../services/productService";
+import { initialProduct } from "../services/initialProduct";
+export const productsContext = createContext([initialProduct]);
+
+export const ProductsContextProvider = ({ children }) => {
+    const [products, setProducts] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState(null)
+    const [ sortedMaxToMin, setSortedMaxToMin ] = useState(false)
+    const [maxPrice, setMaxPrice] = useState(1000)
+    const [minPrice, setMinPrice] = useState(0)
+    const [search, setSearch] = useState("")
+    const [category, setCategory] = useState("all")
+    const [cart, setCart] = useState([])
+
+    const handleSort = () => {
+        if (sortedMaxToMin) {
+            const sortedProducts = products.toSorted((a,b) => a.price - b.price);
+            setProducts(sortedProducts);
+        } else {
+            const sortedProducts = products.toSorted((a,b) => b.price - a.price);
+            setProducts(sortedProducts);
+        }
+        setSortedMaxToMin(!sortedMaxToMin);
+    };
+    const handleSearch = (search) => setSearch(search.toLocaleLowerCase())
+    const handleMaxPrice = (priceMax)=> setMaxPrice(priceMax);
+    const handleMinPrice = (priceMin)=> setMinPrice(priceMin);
+    const handleCategory = (category)=> setCategory(category);
+    const addToCart = (prod) => {
+        setCart((prevValue) => [...prevValue, prod])
+    }
+    const removeFromCart = (id) => {
+        setCart(cart.filter(item => item.id !== id))
+    }
+
+    const fetchData = async () => {
+        try {
+            setError(null);
+            setIsLoading(true);
+            const data = await getAllProducts();
+            setProducts(data);
+        } catch (err) {
+            console.error(err)
+            setError(err.message)
+        }finally {
+            setIsLoading(false);
+        }
+    }
+    useEffect(()=> {
+        fetchData();
+    }, []);
+    return (
+        <productsContext.Provider value={{ 
+            products, 
+            isLoading, 
+            error, 
+            sortedMaxToMin, 
+            handleSort, 
+            minPrice,
+            handleMinPrice,
+            maxPrice, 
+            handleMaxPrice,
+            search,
+            handleSearch,
+            category,
+            handleCategory,
+            cart,
+            addToCart,
+            removeFromCart
+            }}>
+            {children}
+        </productsContext.Provider>
+    )
+};
+
+
