@@ -1,6 +1,8 @@
 import React, { useEffect, useState, createContext } from "react";
 import { getAllProducts } from "../services/productService";
 import { initialProduct } from "../services/initialProduct";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase.js"
 export const productsContext = createContext([initialProduct]);
 
 export const ProductsContextProvider = ({ children }) => {
@@ -13,6 +15,16 @@ export const ProductsContextProvider = ({ children }) => {
     const [search, setSearch] = useState("")
     const [category, setCategory] = useState("all")
     const [cart, setCart] = useState([])
+    const [user, setUser] = useState(null)
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser(user.email);
+            } 
+        })
+    }) 
+
 
     const handleSort = () => {
         if (sortedMaxToMin) {
@@ -28,6 +40,7 @@ export const ProductsContextProvider = ({ children }) => {
     const handleMaxPrice = (priceMax)=> setMaxPrice(priceMax);
     const handleMinPrice = (priceMin)=> setMinPrice(priceMin);
     const handleCategory = (category)=> setCategory(category);
+    const handleUser = (user) => setUser(user);
     const addToCart = (prod) => {
         setCart((prevValue) => [...prevValue, prod])
     }
@@ -68,7 +81,9 @@ export const ProductsContextProvider = ({ children }) => {
             handleCategory,
             cart,
             addToCart,
-            removeFromCart
+            removeFromCart,
+            user,
+            handleUser
             }}>
             {children}
         </productsContext.Provider>
