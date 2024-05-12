@@ -7,7 +7,7 @@ function Product({ prod }) {
     <div key={prod.id}> 
         <h3>{prod.title}</h3>
         <div>
-        <img src={prod.images} alt={prod.title}/>
+        <img src={prod.thumbnail} alt={prod.title}/>
         <p>${prod.price}</p>
         <button onClick={() => addToCart(prod)}>Agregar al carrito</button>
         </div>

@@ -15,6 +15,5 @@ export const getDerivedCart = (cart) => {
     }
  });
 
- localStorage.setItem('derivedCart', JSON.stringify(derivedCart));
  return derivedCart
 }

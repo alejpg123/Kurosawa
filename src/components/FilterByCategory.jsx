@@ -7,13 +7,14 @@ function FilterByCategory() {
         <>
         <div>
             <select
-            onChange={(i) => handleCategory(i.target.value)}>
+            onChange={(e) => handleCategory(e.target.value)}>
                 <option value="all">Todas las categorías</option>
-                <option value="Clothes">Ropa</option>
-                <option value="Electronics">Electrónica</option>
-                <option value="Shoes">Zapatos</option>
-                <option value="Furniture">Hogar</option>
-                <option value="Miscellaneous">Otros</option>
+                <option value="smartphones">Celulares</option>
+                <option value="laptops">Laptops</option>
+                <option value="fragrances">Perfumes</option>
+                <option value="skincare">Productos de belleza</option>
+                <option value="home-decoration">Hogar</option>
+                <option value="groceries">Otros</option>
             </select>
         </div>
         </>

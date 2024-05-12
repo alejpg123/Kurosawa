@@ -1,5 +1,5 @@
 import React, { useEffect, useState, createContext } from "react";
-import { getAllProducts } from "../services/productService";
+import { getAllProducts, getCartFromStorage } from "../services/productService";
 import { initialProduct } from "../services/initialProduct";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase.js"
@@ -14,7 +14,7 @@ export const ProductsContextProvider = ({ children }) => {
     const [minPrice, setMinPrice] = useState(0)
     const [search, setSearch] = useState("")
     const [category, setCategory] = useState("all")
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(getCartFromStorage())
     const [user, setUser] = useState(null)
 
     useEffect(() => {
@@ -43,17 +43,21 @@ export const ProductsContextProvider = ({ children }) => {
     const handleUser = (user) => setUser(user);
     const addToCart = (prod) => {
         setCart((prevValue) => [...prevValue, prod])
+        const newCart = [...cart, prod];
+        window.localStorage.setItem('cart', JSON.stringify(newCart))
     }
     const removeFromCart = (id) => {
-        setCart(cart.filter(item => item.id !== id))
-    }
+        const updatedCart = cart.filter(item => item.id !== id);
+        setCart(updatedCart);
+        window.localStorage.setItem('cart', JSON.stringify(updatedCart));
+    };
 
     const fetchData = async () => {
         try {
             setError(null);
             setIsLoading(true);
             const data = await getAllProducts();
-            setProducts(data);
+            setProducts(data.products);
         } catch (err) {
             console.error(err)
             setError(err.message)
