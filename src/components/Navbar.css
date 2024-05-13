@@ -33,6 +33,12 @@
 
 .Third
 {
-    width: 20%;
+    width: 10%;
+    text-align: right;
+}
+
+.Fourth
+{
+    width: 10%;
     text-align: right;
 }
