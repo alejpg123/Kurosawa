@@ -6,11 +6,7 @@ export const getAllProducts = async () => {
 }
 
 export const getCartFromStorage = () => {
-    const storedCart = window.localStorage.getItem('cart')
-    const parsedCart = JSON.parse(storedCart)
-    return parsedCart
-}
-
-//https://fake-store-api.mock.beeceptor.com/api/products
-//https://api.escuelajs.co/api/v1/products
-//https://dummyjson.com/products
+    const storedCart = window.localStorage.getItem("cart");
+    const cart = JSON.parse(storedCart);
+    return cart ? cart : [];
+};
