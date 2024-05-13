@@ -1,5 +1,13 @@
 .search {
-    background-color: transparent;
+    background-color:white;
     border: 1px solid;
     border-color: gray;
+    color: black;
+    text-align: center;
+    width: 200px;
+}
+
+.Center
+{
+    text-align: center;
 }

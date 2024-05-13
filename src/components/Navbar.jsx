@@ -17,9 +17,15 @@ function Navbar() {
     
     return (
         <nav className={color ? 'nav secondColor' : 'nav'}>
-            <Search />
-            <NavLink to="/"><h1>KUROSAWA</h1></NavLink>
-            <NavLink to="../Cart"><ShoppingCartIcon /></NavLink>
+            <div className="First">
+                <NavLink to="/"><h1>KUROSAWA</h1></NavLink>
+            </div>
+            <div className="Second">
+                <Search />
+            </div>
+            <div className="Third">
+                <NavLink to="../Cart"><ShoppingCartIcon /></NavLink>
+            </div>
         </nav>
     )
 }

@@ -5,15 +5,8 @@ import "./Search.css"
 function Search() {
     const { search, handleSearch } = useContext(productsContext);
     return (
-        <div>
-        <input className="search"
-        type="text" 
-        name="search" 
-        id="searchTerm"
-        placeholder="Buscador"
-        label="search"
-        onChange={(e) => handleSearch(e.target.value)}
-        />
+        <div className="Center">
+            <input className="search"  type="text" name="search" id="searchTerm" placeholder="Buscador" label="search" onChange={(e) => handleSearch(e.target.value)} />
         </div>
     )
 }

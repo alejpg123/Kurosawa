@@ -24,23 +24,21 @@ function RegisterForm () {
     return (
         <form onSubmit={handleSubmit}>
             Crear un usuario
-            <label>
-            Email:
-            <input 
-            type="text" 
-            placeholder="email@dominio.com"
-            name="email"/>
-            </label>
-            <label>
-            Password:
-            <input  
-            type="password" 
-            placeholder="Contraseña"
-            name="password"/>
-            </label>
+            <div>
+                <label>
+                    Email: <input type="text" placeholder="email@dominio.com" name="email"/>
+                </label>
+            </div>
+            <div className="Divisor">
+             </div>
+            <div>
+                <label>
+                    Password: <input type="password" placeholder="Contraseña" name="password"/>
+                </label>
+            </div>
             <button type="submit">Crear usuario</button>
         </form>
     )
 }
 
-export default RegisterForm;
+export default RegisterForm;6
