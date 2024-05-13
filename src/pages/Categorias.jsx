@@ -13,13 +13,12 @@ function Categorias() {
     };
 
     products.forEach(product => {
-        const isUnique = !uniqueCategories.some(item => item.category.id === product.category.id);
+        const isUnique = !uniqueCategories.some(item => item.category === product.category);
         if (isUnique) {
             uniqueCategories.push(product);
         }
     });
 
-    /* la idea es que se clickee en la imagen y renderice los productos de esa categoría*/
     return (
         <div>
         <Navbar />
@@ -27,12 +26,12 @@ function Categorias() {
         
             <>
                 {uniqueCategories.map(item => (
-                    <div key={item.category.id}>
-                        <h2>{item.category.name}</h2>
+                    <div key={item.id}>
+                        <h2>{item.category}</h2>
                         <img 
-                            src={item.category.image} 
-                            alt={item.category.name} 
-                            onClick={() => handleCategoryClick(item.category.id)}
+                            src={item.thumbnail} 
+                            alt={item.category} 
+                            onClick={() => handleCategoryClick(item.category)}
                         />
                     </div>
                 ))}
@@ -40,12 +39,12 @@ function Categorias() {
     
             <div>
                   {products.filter((prod) => 
-                    (prod.category.id === selectedCategory))
+                    (prod.category === selectedCategory))
                      .map((product) => (
                         <div key={product.id}> 
                         <h3>{product.title}</h3>
                         <div>
-                        <img src={product.images} alt={product.title}/>
+                        <img src={product.thumbnail} alt={product.title}/>
                         <p>${product.price}</p>
                         <button onClick={() => addToCart(product)}>Agregar al carrito</button>
                         </div>
