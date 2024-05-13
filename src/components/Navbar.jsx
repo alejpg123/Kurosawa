@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import React, { useState } from 'react';
 import Search from "./Search"
+import CartSummary from "./CartSummary"
 import './Navbar.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
@@ -19,7 +20,7 @@ function Navbar() {
         <nav className={color ? 'nav secondColor' : 'nav'}>
             <Search />
             <NavLink to="/"><h1>KUROSAWA</h1></NavLink>
-            <NavLink to="../Cart"><ShoppingCartIcon /></NavLink>
+            <NavLink to="../Cart"><CartSummary/><ShoppingCartIcon /></NavLink>
         </nav>
     )
 }
