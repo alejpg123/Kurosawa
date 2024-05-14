@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { productsContext } from "../context/ProductsContext";
 import { auth } from "../firebase.js";
 
+
 function SignOut() {
     const {user, handleUser } = useContext(productsContext);
     const signOut = () => {
