@@ -25,9 +25,6 @@ function RegisterForm () {
     }
     return (
         <>
-        <Sidebar />
-        <Navbar />
-
         <form onSubmit={handleSubmit}>
             Crear un usuario
             <div>
