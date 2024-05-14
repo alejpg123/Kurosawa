@@ -13,14 +13,28 @@ function Cart() {
         <>
         <Navbar />
         <Sidebar />
-        
-        <div className="divCart">
+        <div className="Divisor">
+        </div>
+        <div className="Title">
+            <h2 >Mi carrito</h2>
+        </div>
+        <div className="Divisor">
+        </div>
+        <div  >
             {derivedCart.map((item) => (
                 <div key={item.id}>
-                    <button onClick={() => removeFromCart(item.id)}>Borrar</button>
-                    <img src="{item.thumbnail}" alt="" /><p>Producto: {item.name}, Cantidad: {item.quantity}, Precio: ${item.totalPrice}</p>
+
+                    <img src={item.thumbnail} alt={item.title} />
+                    <p>Producto: {item.name}, Cantidad: {item.quantity}, Precio: ${item.totalPrice}</p>
+                    <button className="button" onClick={() => removeFromCart(item.id)}>Borrar</button>
+                    <div className="Divisor">
+                    </div>
                 </div>
             ))}
+        </div>
+        <div className="Divisor">
+        </div>
+        <div className="Divisor">
         </div>
         </>
     );

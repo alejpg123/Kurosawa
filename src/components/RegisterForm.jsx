@@ -2,8 +2,12 @@ import React, { useContext } from "react";
 import { productsContext } from "../context/ProductsContext.jsx";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.js"
+<<<<<<< HEAD
 import Sidebar from "./Sidebar.jsx"
 import Navbar from "./Navbar.jsx"
+=======
+import  './RegisterForm.css'
+>>>>>>> 36557eb7294c526107c7900bc7de29c608278a10
 
 function RegisterForm () {
     const {user, handleUser } = useContext(productsContext);
@@ -30,24 +34,22 @@ function RegisterForm () {
 
         <form onSubmit={handleSubmit}>
             Crear un usuario
-            <label>
-            Email:
-            <input 
-            type="text" 
-            placeholder="email@dominio.com"
-            name="email"/>
-            </label>
-            <label>
-            Password:
-            <input  
-            type="password" 
-            placeholder="Contraseña"
-            name="password"/>
-            </label>
-            <button type="submit">Crear usuario</button>
+            <div>
+                <label>
+                    Email: <input type="text" placeholder="email@dominio.com" name="email"/>
+                </label>
+            </div>
+            <div className="Divisor">
+             </div>
+            <div>
+                <label>
+                    Password: <input type="password" placeholder="Contraseña" name="password"/>
+                </label>
+            </div>
+            <button type="submit" className="Button">Crear usuario</button>
         </form>
         </>
     )
 }
 
-export default RegisterForm;
+export default RegisterForm;6

@@ -8,17 +8,18 @@ function Search() {
 
 
     return (
-        <div>
+        <div className="Center">
+          
             <Link to="/products" className="search-link">
-        <input className="search"
-        type="text" 
-        name="search" 
-        id="searchTerm"
-        placeholder="Buscador"
-        label="search"
-        onChange={(e) => handleSearch(e.target.value)}
-        />
-        </Link>
+            <input className="search"
+            type="text" 
+            name="search" 
+            id="searchTerm"
+            placeholder="Buscador"
+            label="search"
+            onChange={(e) => handleSearch(e.target.value)}
+            />
+            </Link>
         </div>
     )
 }

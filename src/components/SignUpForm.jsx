@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { productsContext } from "../context/ProductsContext";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.js"
+import  './SignUpForm.css'
 
 function SignUpForm () {
     const {user, handleUser } = useContext(productsContext);
@@ -23,6 +24,7 @@ function SignUpForm () {
         })
     }
     return (
+<<<<<<< HEAD
         
         <form onSubmit={handleSubmit}>
             Ingresar
@@ -42,6 +44,27 @@ function SignUpForm () {
             </label>
             <p style={{ color: "tomato" }}>{error}</p>
             <button type="submit">Iniciar Sesión</button>
+=======
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label>
+                    Ingresar Email: <input type="text" placeholder="email@dominio.com" name="email"/>
+                </label>
+             </div>
+             <div className="Divisor">
+             </div>
+             <div>
+                <label>
+                    Contraseña    : <input type="password" placeholder="Contraseña" name="password"/>
+                </label>
+            <div>
+            </div>
+                <p style={{ color: "tomato" }}>{error}</p>
+                <button type="submit" className="Button">Ingresar</button>
+            </div>
+            <div className="Divisor">
+             </div>
+>>>>>>> 36557eb7294c526107c7900bc7de29c608278a10
         </form>
         
     )

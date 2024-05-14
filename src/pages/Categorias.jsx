@@ -23,20 +23,35 @@ function Categorias() {
         <div>
         <Navbar />
         <Sidebar/> 
-        
+            <div className="Divisor">
+              
+            </div>
+            <div className="Title">
+                <h2 >Listado de Categorias</h2>
+            </div>
+            <div className="Divisor">
+            </div>
             <>
                 {uniqueCategories.map(item => (
                     <div key={item.id}>
-                        <h2>{item.category}</h2>
-                        <img 
-                            src={item.thumbnail} 
-                            alt={item.category} 
-                            onClick={() => handleCategoryClick(item.category)}
-                        />
+                        <h2 className="LinesTitle">{item.category}</h2>
+                        <div className="images">
+                            <center>
+                            <img 
+                                src={item.thumbnail} 
+                                alt={item.category} 
+                                onClick={() => handleCategoryClick(item.category)}
+                            />
+                            </center>
+                        </div>
                     </div>
                 ))}
+                
             </>
-    
+            <div className="Divisor">
+            </div>
+            <div className="Divisor">
+            </div>
             <div>
                   {products.filter((prod) => 
                     (prod.category === selectedCategory))
@@ -52,6 +67,8 @@ function Categorias() {
                     </div>
                     ))}
             </div>
+
+         
         </div>
     );
 }
