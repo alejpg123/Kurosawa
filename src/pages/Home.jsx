@@ -18,6 +18,13 @@ function Home () {
             <Navbar />
         </header>
         <div style={{ color: "white" }}><Sidebar />
+        <div className="Divisor">
+        </div>
+        <div className="Title">
+            <h2 >Ingreso</h2>
+        </div>
+        <div className="Divisor">
+        </div>
         <SignUpForm />
         <RegisterForm />
         {user ? (

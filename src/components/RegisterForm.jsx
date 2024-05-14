@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { productsContext } from "../context/ProductsContext.jsx";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.js"
+import  './RegisterForm.css'
 
 function RegisterForm () {
     const {user, handleUser } = useContext(productsContext);
@@ -36,7 +37,7 @@ function RegisterForm () {
                     Password: <input type="password" placeholder="Contraseña" name="password"/>
                 </label>
             </div>
-            <button type="submit">Crear usuario</button>
+            <button type="submit" className="Button">Crear usuario</button>
         </form>
     )
 }

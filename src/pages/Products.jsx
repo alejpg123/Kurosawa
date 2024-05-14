@@ -24,14 +24,18 @@ function Products() {
             <div className="Divisor">
                
             </div>
+            
+            <div className="Title">
+                <h2 >Listado de Productos</h2>
+            </div>
+            <div className="Divisor">
+              
+              </div>
             <div className="Center">
                 <FilterByCategory />
             </div>
             <div className="Divisor">
               
-            </div>
-            <div className="Title">
-                <h2 >Listado de Productos</h2>
             </div>
             <div className="Divisor">
             </div>

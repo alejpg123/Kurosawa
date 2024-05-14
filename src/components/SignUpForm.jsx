@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { productsContext } from "../context/ProductsContext";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.js"
+import  './SignUpForm.css'
 
 function SignUpForm () {
     const {user, handleUser } = useContext(productsContext);

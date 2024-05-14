@@ -12,6 +12,8 @@
 
 .Button
 {
-    background-color:gray;
-    color:gray;
+  text-align: center;
+  font-weight: bold;
+  text-decoration:underline;
+  color: black;
 }
