@@ -38,3 +38,10 @@
   width: 100%;
   text-align: center;
 }
+
+.button
+{
+  text-align: center;
+  font-weight: bold;
+  text-decoration:underline;
+}

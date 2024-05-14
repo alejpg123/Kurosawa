@@ -9,18 +9,17 @@ function Product({ prod }) {
         <h3 className="LinesTitle">{prod.title}</h3>
         <div className="images">
             <center>
-            <img src={prod.thumbnail} alt={prod.title} />
+                <img src={prod.thumbnail} alt={prod.title} />
             </center>
         </div>
 
         <div className="CenterDescriptionPart"> 
+            <p className="lines">{prod.description.slice(0, 40)}...</p>
             <div className="lines">
                 <p>${prod.price}</p>
-                <button onClick={() => addToCart(prod)}>Agregar al carrito</button>
+                <button className="button" onClick={() => addToCart(prod)}>Agregar al carrito</button>
             </div>
-            <p className="lines">{prod.description.slice(0, 40)}...</p>
         </div>
-     
         <div className="Divisor">
         </div>
         <div className="Divisor">
