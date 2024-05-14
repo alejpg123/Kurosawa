@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import React, { useState } from 'react';
 import Search from "./Search"
+import CartSummary from "./CartSummary"
 import './Navbar.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
@@ -17,6 +18,7 @@ function Navbar() {
     
     return (
         <nav className={color ? 'nav secondColor' : 'nav'}>
+
             <div className="First">
                 <NavLink to={'/'}><h1>KUROSAWA</h1></NavLink>
             </div>
@@ -29,6 +31,9 @@ function Navbar() {
             <div className="Fourth" >
                 <NavLink to={'/components/SignUpForm'}><h1>Salir</h1></NavLink>
             </div>
+
+          
+
         </nav>
     )
 }

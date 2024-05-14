@@ -9,10 +9,8 @@ function CartSummary() {
     return (
         <>
     <Link to="/cart">
-    <MdShoppingCart />
+    ${getTotalCartPrice(cart)}
     </Link>
-    <span>Cant:{cart.length}
-    Total: ${getTotalCartPrice(cart)}</span>
     </>
     );
 }

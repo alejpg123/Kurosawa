@@ -22,7 +22,7 @@ export const SidebarData = [
     },
     {
         title: "Carrito",
-        link: "./components/Cart",
+        link: "../Cart",
         icon: <ShoppingCartIcon />
     },
 ]
