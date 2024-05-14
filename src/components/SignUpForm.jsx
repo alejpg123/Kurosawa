@@ -23,7 +23,7 @@ function SignUpForm () {
         })
     }
     return (
-
+        
         <form onSubmit={handleSubmit}>
             Ingresar
             <label>
@@ -41,8 +41,9 @@ function SignUpForm () {
             name="password"/>
             </label>
             <p style={{ color: "tomato" }}>{error}</p>
-            <button type="submit">Ingresar</button>
+            <button type="submit">Iniciar Sesión</button>
         </form>
+        
     )
 }
 

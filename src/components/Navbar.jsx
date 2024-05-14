@@ -1,11 +1,13 @@
 import { NavLink } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Search from "./Search"
 import CartSummary from "./CartSummary"
+import { productsContext } from "../context/ProductsContext";
 import './Navbar.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Navbar() {
+    const {user, handleUser } = useContext(productsContext);
     const [color, setColor] = useState(false)
     const changeColor = () => {
         if (window.scrollY >= 180) {
@@ -19,7 +21,6 @@ function Navbar() {
     return (
         <nav className={color ? 'nav secondColor' : 'nav'}>
             <Search />
-            <NavLink to="/"><h1>KUROSAWA</h1></NavLink>
             <NavLink to="../Cart"><CartSummary/><ShoppingCartIcon /></NavLink>
         </nav>
     )

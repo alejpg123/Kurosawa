@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { productsContext } from "../context/ProductsContext.jsx";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.js"
+import Sidebar from "./Sidebar.jsx"
+import Navbar from "./Navbar.jsx"
 
 function RegisterForm () {
     const {user, handleUser } = useContext(productsContext);
@@ -22,6 +24,10 @@ function RegisterForm () {
         })
     }
     return (
+        <>
+        <Sidebar />
+        <Navbar />
+
         <form onSubmit={handleSubmit}>
             Crear un usuario
             <label>
@@ -40,6 +46,7 @@ function RegisterForm () {
             </label>
             <button type="submit">Crear usuario</button>
         </form>
+        </>
     )
 }
 
