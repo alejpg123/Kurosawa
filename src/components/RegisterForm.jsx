@@ -2,12 +2,8 @@ import React, { useContext } from "react";
 import { productsContext } from "../context/ProductsContext.jsx";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.js"
-<<<<<<< HEAD
 import Sidebar from "./Sidebar.jsx"
 import Navbar from "./Navbar.jsx"
-=======
-import  './RegisterForm.css'
->>>>>>> 36557eb7294c526107c7900bc7de29c608278a10
 
 function RegisterForm () {
     const {user, handleUser } = useContext(productsContext);
