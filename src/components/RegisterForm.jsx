@@ -27,14 +27,14 @@ function RegisterForm () {
             Crear un usuario
             <div>
                 <label>
-                    Email: <input type="text" placeholder="email@dominio.com" name="email"/>
+                    Ingresar Email: <input type="text" placeholder="email@dominio.com" name="email"/>
                 </label>
             </div>
             <div className="Divisor">
              </div>
             <div>
                 <label>
-                    Password: <input type="password" placeholder="Contraseña" name="password"/>
+                    Contraseña: <input type="password" placeholder="Contraseña" name="password"/>
                 </label>
             </div>
             <button type="submit" className="Button">Crear usuario</button>

@@ -17,3 +17,17 @@
   text-decoration:underline;
   color: black;
 }
+
+label {
+  font-family: sans-serif;
+}
+
+input {
+  border-radius: 5px;
+  width: 200px;
+  height: 30px;
+  padding: 5px;
+  margin: 5px -5px -5px 5px;
+  border: 1px solid #ccc;
+}
+
