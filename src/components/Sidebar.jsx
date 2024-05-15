@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState, useContext } from 'react';
+
 import "./Sidebar.css"
 import { SidebarData } from "./SidebarData"
+import { productsContext } from "../context/ProductsContext";
 
 function Sidebar() {
+    const {user, handleUser } = useContext(productsContext);
     return (
         <div className="Sidebar">
             <ul className="SidebarList">

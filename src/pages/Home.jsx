@@ -15,23 +15,23 @@ function Home () {
         <>
         <main className="main">
         <header>
-            <Navbar />
+            {user ? (  <Navbar />) : (  <div className="Divisor"></div>)} 
         </header>
-        <div style={{ color: "white" }}><Sidebar />
-        <div className="Divisor">
-        </div>
-        <div className="Title">
-            <h2 >Ingreso</h2>
-        </div>
-        <div className="Divisor">
-        </div>
-        <SignUpForm />
-        <RegisterForm />
-        {user ? (
-            <SignOut />
-        ) : (
-            <p>Sin usuario</p>
-        )}
+        <div style={{ color: "white" }}> 
+            {user ? (  <Sidebar />) : (  <div className="Divisor"></div>)} 
+
+            {user ? (<div className="Divisor"></div>) : ( <div className="Title"><h2 >Ingreso</h2></div>)}
+          
+            <div className="Divisor">
+            </div>
+        
+            {user ? (<div className="Divisor"></div>) : ( <SignUpForm />)}
+            {user ? (<div className="Divisor"></div>) : (<RegisterForm />)}
+            {user ? (
+                <SignOut />
+            ) : (
+                <p>Sin usuario</p>
+            )}
         </div>
         </main>
         </>

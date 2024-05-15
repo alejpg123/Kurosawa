@@ -31,7 +31,8 @@ function Navbar() {
                 <NavLink to="../Cart"><ShoppingCartIcon /></NavLink>
             </div>
             <div className="Fourth" >
-                <NavLink to={'/components/SignUpForm'}><h1>Salir</h1></NavLink>
+   
+                <NavLink to={'/components/SignUpForm'}><h1>{user}</h1></NavLink>
             </div>
 
           

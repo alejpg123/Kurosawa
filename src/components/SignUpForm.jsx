@@ -28,20 +28,19 @@ function SignUpForm () {
         <form onSubmit={handleSubmit}>
             <div>
                 <label>
-                Ingresar Email: <input type="text" placeholder="email@dominio.com"name="email"/>
-            </label>
+                    Ingresar Email: <input type="text" placeholder="email@dominio.com"name="email"/>
+                </label>
             </div>
             <div className="Divisor">
             </div>
             <div>
                 <label>
-                Password: <input  type="password" placeholder="Contraseña"name="password"/>
+                    Contraseña: <input  type="password" placeholder="Contraseña"name="password"/>
                 </label>
             </div>
             <p style={{ color: "tomato" }}>{error}</p>
-            <button type="submit">Iniciar Sesión</button>
+            <button type="submit" className="Button">Iniciar Sesión</button>
         </form>
-        
     )
 }
 

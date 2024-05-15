@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { productsContext } from "../context/ProductsContext";
 import { auth } from "../firebase.js";
-
+import { useState } from 'react';
 
 function SignOut() {
     const {user, handleUser } = useContext(productsContext);
@@ -14,7 +14,7 @@ function SignOut() {
         })
     }
     return (
-            <button onClick={signOut}>Salir de la sesión</button>
+            <button onClick={signOut}  className='Button'>Salir de la sesión {user}</button>
     )
 }
 

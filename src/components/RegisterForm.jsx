@@ -1,12 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { productsContext } from "../context/ProductsContext.jsx";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.js"
 import Sidebar from "./Sidebar.jsx"
 import Navbar from "./Navbar.jsx"
+import { colors } from "@mui/material";
 
 function RegisterForm () {
     const {user, handleUser } = useContext(productsContext);
+    const [error, setError] = useState(null)
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,13 +16,16 @@ function RegisterForm () {
         createUserWithEmailAndPassword(auth, email.value, password.value)
         .then((userCredential) => {
             handleUser(userCredential.user.email);
-            console.log(user)
+            console.log(user);
         })
         .catch((err) => {
-            const errorCode = err.code
-            const errorMessage = err.message
-            console.error(errorCode)
-            console.error(errorMessage)
+            const errorCode = err.code;
+            const errorMessage = err.message;
+           
+            setError("El mail y/o la contraseña no son válidos.")
+            console.error(errorCode);
+            console.error(errorMessage);
+    
         })
     }
     return (
@@ -33,16 +38,17 @@ function RegisterForm () {
                 </label>
             </div>
             <div className="Divisor">
-             </div>
+            </div>
             <div>
                 <label>
                     Contraseña: <input type="password" placeholder="Contraseña" name="password"/>
                 </label>
             </div>
+            <p style={{color:"tomato"}}>{error}</p>
             <button type="submit" className="Button">Crear usuario</button>
         </form>
         </>
     )
 }
 
-export default RegisterForm;6
+export default RegisterForm;
