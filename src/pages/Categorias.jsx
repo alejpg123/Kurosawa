@@ -8,8 +8,10 @@ function Categorias() {
     const { products, addToCart } = useContext(productsContext);
     const uniqueCategories = [];
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const [categoryDescripcion, setCategoryDescripcion] = useState("");
     const handleCategoryClick = (categoryId) => {
         setSelectedCategory(categoryId);
+        setCategoryDescripcion( categoryId);
     };
 
     products.forEach(product => {
@@ -44,11 +46,17 @@ function Categorias() {
                             />
                             </center>
                         </div>
+                        <div className="Divisor">
+                     </div>
                     </div>
                 ))}
-                
             </>
             <div className="Divisor">
+            </div>
+            <div className="Divisor">
+            </div>
+            <div className="Title">
+                <h2 >Listado de productos por categoria {categoryDescripcion}</h2>
             </div>
             <div className="Divisor">
             </div>
@@ -57,18 +65,26 @@ function Categorias() {
                     (prod.category === selectedCategory))
                      .map((product) => (
                         <div key={product.id}> 
-                        <h3>{product.title}</h3>
-                        <div>
-                        <img src={product.thumbnail} alt={product.title}/>
-                        <p>${product.price}</p>
-                        <button onClick={() => addToCart(product)}>Agregar al carrito</button>
+                            <h3 className="LinesTitleProduct">{product.title}</h3>
+                            <div className="images">
+                                <center>
+                                    <img src={product.thumbnail} alt={product.title} />
+                                </center>
+                            </div>
+                            <div className="CenterDescriptionPart"> 
+                                <p className="lines">{product.description.slice(0, 40)}...</p>
+                                <div className="lines">
+                                    <p>${product.price}</p>
+                                    <button className="button" onClick={() => addToCart(product)}>Agregar al carrito</button>
+                                </div>
+                            </div>
+                            <div className="Divisor">
+                            </div>
+                            <div className="Divisor">
+                            </div>
                         </div>
-                    <p>{product.description.slice(0, 40)}...</p>
-                    </div>
                     ))}
             </div>
-
-         
         </div>
     );
 }
