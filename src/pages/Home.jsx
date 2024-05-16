@@ -11,14 +11,18 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase.js";
 
 function Home () {
-    const {user} = useContext(productsContext);
+    const {user, products} = useContext(productsContext);
     useEffect(()=> {
         onAuthStateChanged(auth, (user) =>{
-     
-
         })
-
     },[])
+
+    const getBestProducts = () => {
+        const sortedProducts = products.sort((a, b) => b.rating - a.rating);
+        return sortedProducts.slice(0, 4);
+      };
+    
+      const bestProducts = getBestProducts();
 
     return (
         <>
@@ -37,10 +41,40 @@ function Home () {
             {user ? (<div className="Divisor"></div>) : ( <SignUpForm />)}
             {user ? (<div className="Divisor"></div>) : (<RegisterForm />)}
             {user ? (
-                <SignOut />
-            ) : (
-                <p>Sin usuario</p>
-            )}
+                <div className="destacados">
+            <div className="Title">
+                <h2 >Productos destacados</h2>
+            </div>
+            <div className="Divisor">
+            </div>
+              <div>
+                {bestProducts.map((product) => (
+                        <div key={product.id}> 
+                        <h3 className="LinesTitleProduct">{product.title}</h3>
+                        <div className="images">
+                            <center>
+                                <img src={product.thumbnail} alt={product.title} />
+                            </center>
+                        </div>
+                        <div className="CenterDescriptionPart"> 
+                            <p className="lines">{product.description.slice(0, 40)}...</p>
+                            <div className="lines">
+                                <p>${product.price}</p>
+                            </div>
+                        </div>
+                        <div className="Divisor">
+                        </div>
+                        <div className="Divisor">
+                        </div>
+                    </div>
+                ))}
+              </div>
+              <SignOut />
+            </div>
+            
+          ) : (
+    <p></p>
+)}
         </div>
         </main>
         </>
