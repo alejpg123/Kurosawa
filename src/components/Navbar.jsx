@@ -32,7 +32,7 @@ function Navbar() {
             </div>
             <div className="Fourth" >
    
-                <NavLink to={'/components/SignUpForm'}><h1>{user}</h1></NavLink>
+                <h1>{user}</h1>
             </div>
 
           

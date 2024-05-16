@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { NavLink } from "react-router-dom";
 import "./Home.css"
@@ -7,10 +7,19 @@ import SignUpForm from "../components/SignUpForm"
 import RegisterForm from "../components/RegisterForm.jsx";
 import { productsContext } from "../context/ProductsContext.jsx";
 import SignOut from "../components/SignOut.jsx"
-
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase.js";
 
 function Home () {
     const {user} = useContext(productsContext);
+    useEffect(()=> {
+        onAuthStateChanged(auth, (user) =>{
+     
+
+        })
+
+    },[])
+
     return (
         <>
         <main className="main">
