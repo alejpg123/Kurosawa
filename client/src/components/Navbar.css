@@ -1,0 +1,25 @@
+.nav {
+    position: fixed;
+    color: #fff;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    justify-content: space-between;
+}
+
+.secondColor {
+    background-color: black;
+}
+
+.centerTitle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; 
+}
+
