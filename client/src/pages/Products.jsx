@@ -7,7 +7,19 @@ import AddSelectedProductsButton from "../components/AddSelectedProductsButton";
 import Footer from "../components/Footer";
 
 function Products() {
-    const { products, isLoading, error, maxPrice, search, minPrice, category } = useContext(productsContext);
+    const {
+        products,
+        isLoading,
+        error,
+        maxPrice,
+        search,
+        minPrice,
+        category,
+        handleSearch,
+        handleMinPrice,
+        handleMaxPrice,
+        handleCategory
+    } = useContext(productsContext);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     if (isLoading) {
@@ -18,12 +30,20 @@ function Products() {
         return <div>Error: {error}</div>;
     }
 
+    const filteredProducts = products.filter(
+        (prod) =>
+            (minPrice === 0 || prod.price >= minPrice) &&
+            (maxPrice === Infinity || prod.price <= maxPrice) &&
+            (category === "all" || prod.category === category) &&
+            (search === "" || prod.title.toLowerCase().includes(search))
+    );
+
     return (
         <div className="flex flex-col min-h-screen">
             <Navbar />
             <div className="flex flex-col items-center justify-center flex-1 container mx-auto p-4">
                 <h2 className="text-2xl font-semibold mb-4">Listado de Productos</h2>
-                <div className="flex justify-center">
+                <div className="flex justify-center mb-4">
                     <div className="max-w-screen-lg w-full px-4">
                         <div className="flex justify-end mb-4">
                             <button
@@ -33,21 +53,12 @@ function Products() {
                                 Filtrar por
                             </button>
                         </div>
-                        {/* Agregar un contenedor relativo para posicionamiento */}
                         <div className="relative">
                             <Filters isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-                                {products
-                                    .filter(
-                                        (prod) =>
-                                            (minPrice === 0 || prod.price >= minPrice) &&
-                                            (maxPrice === Infinity || prod.price <= maxPrice) &&
-                                            (category === 'all' || prod.category === category) &&
-                                            (search === '' || prod.title.toLocaleLowerCase().includes(search))
-                                    )
-                                    .map((prod) => (
-                                        <Product key={prod.id} prod={prod} />
-                                    ))}
+                                {filteredProducts.map((prod) => (
+                                    <Product key={prod.id} prod={prod} />
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -58,7 +69,7 @@ function Products() {
                     </div>
                 </div>
             </div>
-            <Footer className="mt-auto"/>
+            <Footer className="mt-auto" />
         </div>
     );
 }

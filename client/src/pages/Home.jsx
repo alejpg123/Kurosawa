@@ -47,13 +47,13 @@ function Home() {
             </header>
             <div className="flex items-center justify-center gap-8">
               <div>
-                <img src="./public/images/cuotas.png" alt="cuotas" />
+                <img src="./images/cuotas.png" alt="cuotas" />
               </div>
               <div>
-                <img src="./public/images/envios.png" alt="envios" />
+                <img src="./images/envios.png" alt="envios" />
               </div>
               <div>
-                <img src="./public/images/15off.png" alt="15% off" />
+                <img src="./images/15off.png" alt="15% off" />
               </div>
             </div>
             <div className="destacados">

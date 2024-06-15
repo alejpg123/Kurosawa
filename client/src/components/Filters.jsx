@@ -5,21 +5,26 @@ import FilterByPrice from "./FilterByPrice";
 import Sort from "./Sort";
 
 function Filters({ isSidebarOpen, setIsSidebarOpen }) {
-    const { products, maxPrice, search, minPrice, category } = useContext(productsContext);
+    const { handleMinPrice, handleMaxPrice, handleCategory, handleSort } = useContext(productsContext);
+
+    const resetFilters = () => {
+        handleMinPrice("");
+        handleMaxPrice(Infinity);
+        handleCategory("all");
+        handleSort(); 
+    };
 
     return (
         <>
-            {/* Fondo oscuro que cubre toda la pantalla */}
             <div
                 className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity ${
-                    isSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                    isSidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
                 }`}
                 onClick={() => setIsSidebarOpen(false)}
             ></div>
-            {/* Menú lateral */}
             <div
                 className={`fixed top-0 right-0 h-full w-full sm:w-3/4 lg:w-1/4 bg-white shadow-lg transform transition-transform z-50 ${
-                    isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
+                    isSidebarOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
                 <div className="text-center relative p-4">
@@ -45,6 +50,14 @@ function Filters({ isSidebarOpen, setIsSidebarOpen }) {
                     <FilterByCategory />
                     <FilterByPrice />
                     <Sort />
+                    <div className="mt-4">
+                        <button
+                            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-300"
+                            onClick={resetFilters}
+                        >
+                            Quitar filtros
+                        </button>
+                    </div>
                 </div>
             </div>
         </>

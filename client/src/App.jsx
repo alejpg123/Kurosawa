@@ -8,7 +8,7 @@ import Categorias from "./pages/Categorias";
 function App() {
   return (
     <>
-      <BrowserRouter basename="/KurosawaII">
+      <BrowserRouter basename="/KurosawaII/">
         <ProductsContextProvider>
           <Routes>
             <Route path="/" element={<Home />}></Route>
