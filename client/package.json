@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://alejpg123.github.io/Kurosawa/build",
+  "homepage": "https://alejpg123.github.io/KurosawaII",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

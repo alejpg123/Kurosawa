@@ -39,21 +39,21 @@ function Home() {
 
   return (
     <>
-      <main className="min-h-screen flex flex-col items-center justify-center">
+      <main className="min-h-screen flex flex-col items-center justify-center w-full">
         {user ? (
           <>
             <header>
               <Navbar />
             </header>
-            <div className="flex items-center justify-center gap-8 ">
+            <div className="flex items-center justify-center gap-8">
               <div>
-                <img src="../images/cuotas.png" alt="15% off" />
+                <img src="./public/images/cuotas.png" alt="cuotas" />
               </div>
               <div>
-                <img src="../images/envios.png" alt="15% off" />
+                <img src="./public/images/envios.png" alt="envios" />
               </div>
               <div>
-                <img src="../images/15off.png" alt="15% off" />
+                <img src="./public/images/15off.png" alt="15% off" />
               </div>
             </div>
             <div className="destacados">
@@ -110,7 +110,7 @@ function Home() {
                                   xmlns="http://www.w3.org/2000/svg"
                                   className="h-6 w-4"
                                   fill="none"
-                                  viewBox="0 0 24 24"
+                                  viewBox="0 24 24"
                                   stroke="currentColor"
                                 >
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
@@ -150,42 +150,37 @@ function Home() {
             </div>
           </>
         ) : (
-          <div>
-            {!showRegisterForm ? (
-              <>
-                <header>
-                  <Navbar />
-                </header>
-                <div>
+          <div className="w-full flex flex-col items-center justify-center p-4">
+            <header className="w-full">
+              <Navbar />
+            </header>
+            <div className="w-full">
+              {!showRegisterForm ? (
+                <>
                   <SignUpForm />
-                  <p>No tienes usuario?</p>
+                  <p className="text-center mt-4">No tienes usuario?</p>
                   <button
                     onClick={() => setShowRegisterForm(true)}
                     type="submit"
-                    className="text-white py-2 px-4 uppercase rounded bg-indigo-500 hover:bg-indigo-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
+                    className="text-white block mx-auto py-2 px-4 uppercase rounded bg-indigo-500 hover:bg-indigo-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5 mt-2"
                   >
                     Crear una cuenta
                   </button>
-                </div>
-              </>
-            ) : (
-              <>
-                <header>
-                  <Navbar />
-                </header>
-                <div>
+                </>
+              ) : (
+                <>
                   <RegisterForm />
-                  <p>Tienes usuario?</p>
+                  <p className="text-center mt-4">Tienes usuario?</p>
                   <button
                     onClick={() => setShowRegisterForm(false)}
                     type="submit"
-                    className="text-white py-2 px-4 uppercase rounded bg-indigo-500 hover:bg-indigo-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
+                    className="text-white block mx-auto py-2 px-4 uppercase rounded bg-indigo-500 hover:bg-indigo-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5 mt-2"
                   >
                     Iniciar sesión
                   </button>
-                </div>
-              </>
-            )}
+                </>
+              )}
+            </div>
           </div>
         )}
       </main>
