@@ -39,6 +39,8 @@ function Home() {
 
   return (
     <>
+    <div className="w-full h-screen bg-cover bg-center" style={{ backgroundImage: `url('./images/back.jpg')` }}>
+      </div>
       <main className="min-h-screen flex flex-col items-center justify-center w-full">
         {user ? (
           <>
