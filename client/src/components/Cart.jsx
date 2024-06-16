@@ -43,7 +43,7 @@ function Cart() {
         <div className="flex flex-col min-h-screen text-center">
             <Navbar />
             <div className="flex-1 container mx-auto p-4">
-                <h2 className="text-2xl font-semibold mb-4">Mi carrito</h2>
+                <h2 className="text-4xl font-bold mb-4 text-center text-black">MI CARRITO</h2>
                 <div>
                     {user ? (
                         <div>
@@ -71,7 +71,7 @@ function Cart() {
                                 </>
                             ) : (
                                 <>
-                                    <p className="text-2xl font-semibold mb-4">Carrito Vacío</p>
+                                    <p className="text-2xl font-semibold mb-14 mt-14 ">Tu carrito está vacío.</p>
                                     <NavLink to="/products">
                                         <button className="px-4 py-2 bg-blue-500 text-white rounded">¡Comienza a comprar!</button>
                                     </NavLink>

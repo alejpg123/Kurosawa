@@ -39,7 +39,7 @@ function Home() {
 
   return (
     <>
-    <div className="w-full h-screen bg-cover bg-center" style={{ backgroundImage: `url('./images/back3.png')` }}>
+      <div className="w-full h-screen bg-cover bg-center" style={{ backgroundImage: `url('./images/back3.png')` }}>
       </div>
       <main className="min-h-screen flex flex-col items-center justify-center w-full">
         {user ? (
@@ -47,7 +47,7 @@ function Home() {
             <header>
               <Navbar />
             </header>
-            <div className="flex flex-wrap items-center justify-center gap-8">
+            <div className="flex flex-wrap items-center justify-center gap-8 mb-10 ">
               <div className="w-1/3 sm:w-auto">
                 <img src="./images/cuotas.png" alt="cuotas" className="w-full sm:w-auto" />
               </div>
@@ -58,10 +58,8 @@ function Home() {
                 <img src="./images/15off.png" alt="15% off" className="w-full sm:w-auto" />
               </div>
             </div>
-            <div className="destacados">
-              <div className="Title">
-                <h2 className="text-2xl font-semibold mb-4 text-center">Productos destacados</h2>
-              </div>
+            <div className="w-full py-16 bg-gray-200">
+                <h2 className="text-4xl font-bold mb-4 text-center text-black">PRODUCTOS DESTACADOS</h2>
               <div>
                 <div className="flex justify-center">
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 max-w-screen-lg">
@@ -147,13 +145,13 @@ function Home() {
                 </div>
               </div>
               <NavLink to="/products">
-              <div className="flex mt-4 text-center ">
-                <div className="m-auto max-w-screen-lg w-full">
-                  <button className="gap-1 h-10 px-6 py-2 mt-2 text-white font-semibold rounded-md bg-indigo-600 hover:bg-indigo-500 ">Ver más productos</button>
+                <div className="flex mt-4 text-center ">
+                  <div className="m-auto max-w-screen-lg w-full">
+                    <button className="gap-1 h-10 px-6 py-2 mt-2 text-white font-semibold rounded-md bg-indigo-600 hover:bg-indigo-500">Ver más productos</button>
+                  </div>
                 </div>
-              </div>
               </NavLink>
-              </div>
+            </div>
           </>
         ) : (
           <div className="w-full flex flex-col items-center justify-center p-4">

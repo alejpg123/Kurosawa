@@ -38,12 +38,12 @@ function Products() {
         <div className="flex flex-col min-h-screen">
             <Navbar />
             <div className="flex flex-col items-center justify-center flex-1 container mx-auto p-4">
-                <h2 className="text-2xl font-semibold mb-4">Listado de Productos</h2>
+                <h2 className="text-4xl font-bold mb-4 text-center text-black">TODOS LOS PRODUCTOS</h2>
                 <div className="flex justify-center mb-4">
                     <div className="max-w-screen-lg w-full px-4">
                         <div className="flex justify-end mb-4">
                             <button
-                                className="px-4 py-2 bg-blue-500 text-white rounded"
+                                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-300"
                                 onClick={() => setIsSidebarOpen(true)}
                             >
                                 Filtrar por
