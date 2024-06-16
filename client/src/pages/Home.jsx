@@ -39,7 +39,7 @@ function Home() {
 
   return (
     <>
-    <div className="w-full h-screen bg-cover bg-center" style={{ backgroundImage: `url('./images/back.jpg')` }}>
+    <div className="w-full h-screen bg-cover bg-center" style={{ backgroundImage: `url('./images/back3.png')` }}>
       </div>
       <main className="min-h-screen flex flex-col items-center justify-center w-full">
         {user ? (
@@ -47,15 +47,15 @@ function Home() {
             <header>
               <Navbar />
             </header>
-            <div className="flex items-center justify-center gap-8">
-              <div>
-                <img src="./images/cuotas.png" alt="cuotas" />
+            <div className="flex flex-wrap items-center justify-center gap-8">
+              <div className="w-1/3 sm:w-auto">
+                <img src="./images/cuotas.png" alt="cuotas" className="w-full sm:w-auto" />
               </div>
-              <div>
-                <img src="./images/envios.png" alt="envios" />
+              <div className="w-1/3 sm:w-auto">
+                <img src="./images/envios.png" alt="envios" className="w-full sm:w-auto" />
               </div>
-              <div>
-                <img src="./images/15off.png" alt="15% off" />
+              <div className="w-1/3 sm:w-auto">
+                <img src="./images/15off.png" alt="15% off" className="w-full sm:w-auto" />
               </div>
             </div>
             <div className="destacados">
