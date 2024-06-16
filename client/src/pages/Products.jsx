@@ -14,11 +14,7 @@ function Products() {
         maxPrice,
         search,
         minPrice,
-        category,
-        handleSearch,
-        handleMinPrice,
-        handleMaxPrice,
-        handleCategory
+        category
     } = useContext(productsContext);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 

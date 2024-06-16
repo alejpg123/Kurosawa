@@ -5,20 +5,19 @@ import { Link } from "react-router-dom";
 function Search() {
     const { handleSearch } = useContext(productsContext);
 
-
     return (
-            <Link to="/products">
-            <input className="bg-white border-solid border-gray-50 text-black text-center rounded-md"
-            type="text"
-            name="search" 
-            id="searchTerm"
-            placeholder="Buscador"
-            label="search"
-            onChange={(e) => handleSearch(e.target.value)}
+        <Link to="/products">
+            <input
+                className="bg-white border-solid border-2 border-black text-black text-center rounded-md"
+                type="text"
+                name="search"
+                id="searchTerm"
+                placeholder="Buscador"
+                label="search"
+                onChange={(e) => handleSearch(e.target.value)}
             />
-            </Link>
-
-    )
+        </Link>
+    );
 }
 
-export default Search
+export default Search;

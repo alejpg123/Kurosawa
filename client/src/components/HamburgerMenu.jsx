@@ -6,6 +6,17 @@ import SignOut from "./SignOut";
 function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(productsContext);
+  const [color, setColor] = useState(false);
+
+  const changeColor = () => {
+    if (window.scrollY >= 180) {
+        setColor(true);
+    } else {
+        setColor(false);
+    }
+};
+
+window.addEventListener('scroll', changeColor);
 
   useEffect(() => {
     if (isOpen) {
@@ -28,9 +39,9 @@ function HamburgerMenu() {
   return (
     <>
       <div className="absolute top-3 left-3 z-30 cursor-pointer" onClick={toggleMenu}>
-        <div className="w-6 h-1 bg-black mb-1"></div>
-        <div className="w-6 h-1 bg-black mb-1"></div>
-        <div className="w-6 h-1 bg-black"></div>
+        <div className={`w-6 h-1 ${color ? 'bg-white' : 'bg-black'} mb-1`}></div>
+        <div className={`w-6 h-1 ${color ? 'bg-white' : 'bg-black'} mb-1`}></div>
+        <div className={`w-6 h-1 ${color ? 'bg-white' : 'bg-black'}`}></div>
       </div>
       {isOpen && (
         <>
@@ -42,7 +53,7 @@ function HamburgerMenu() {
           <div className="fixed top-0 left-0 h-full bg-white shadow-lg z-20 p-5 w-3/4 sm:w-1/2 md:w-1/3 lg:w-1/4 transition-transform transform translate-x-0">
             <div className="flex flex-col justify-between h-full text-black">
               <div className="text-center flex flex-col space-y-4">
-                <h1 className="text-2xl font-bold">KUROSAWA</h1>
+                <div className="w-40 h-auto m-auto"><img src="./images/logo.png" alt="Logo Kurosawa" /></div>
                 <Link to="/" className="text-lg hover:bg-gray-200 p-2 rounded">
                   Inicio
                 </Link>

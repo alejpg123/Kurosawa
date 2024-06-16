@@ -31,8 +31,8 @@ function Navbar() {
                     <Search />
                     </div>
                 </div>
-                <NavLink to={'/'} className="centerTitle"><h1>KUROSAWA</h1></NavLink>
-                <div>
+                <NavLink to={'/'} className="centerTitle hidden sm:block"><img src="./images/logo.png" alt="Logo Kurosawa" /></NavLink>
+                <div className={color ? 'text-white' : 'text-black'}>
                     <NavLink to="/Cart"><ShoppingCartIcon /></NavLink>
                 </div>
             </nav>
