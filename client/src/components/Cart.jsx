@@ -40,12 +40,10 @@ function Cart() {
     };
 
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen text-center">
             <Navbar />
             <div className="flex-1 container mx-auto p-4">
-                <div className="Title">
-                    <h2>Mi carrito</h2>
-                </div>
+                <h2 className="text-2xl font-semibold mb-4">Mi carrito</h2>
                 <div>
                     {user ? (
                         <div>
@@ -73,7 +71,7 @@ function Cart() {
                                 </>
                             ) : (
                                 <>
-                                    <p>Carrito Vacío</p>
+                                    <p className="text-2xl font-semibold mb-4">Carrito Vacío</p>
                                     <NavLink to="/products">
                                         <button className="px-4 py-2 bg-blue-500 text-white rounded">¡Comienza a comprar!</button>
                                     </NavLink>

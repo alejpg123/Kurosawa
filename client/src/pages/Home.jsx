@@ -58,7 +58,7 @@ function Home() {
             </div>
             <div className="destacados">
               <div className="Title">
-                <h2>Productos destacados</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-center">Productos destacados</h2>
               </div>
               <div>
                 <div className="flex justify-center">
@@ -145,9 +145,13 @@ function Home() {
                 </div>
               </div>
               <NavLink to="/products">
-                <p>Ver más productos</p>
+              <div className="flex mt-4 text-center ">
+                <div className="m-auto max-w-screen-lg w-full">
+                  <button className="gap-1 h-10 px-6 py-2 mt-2 text-white font-semibold rounded-md bg-indigo-600 hover:bg-indigo-500 ">Ver más productos</button>
+                </div>
+              </div>
               </NavLink>
-            </div>
+              </div>
           </>
         ) : (
           <div className="w-full flex flex-col items-center justify-center p-4">

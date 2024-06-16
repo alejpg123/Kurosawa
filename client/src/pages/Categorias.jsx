@@ -47,7 +47,7 @@ function Categorias() {
       <div className="flex flex-col min-h-screen">
             <Navbar />
             <div className="flex flex-col items-center justify-center flex-1 container mx-auto p-4">
-                <h2>Listado de Categorias</h2>
+                <h2 className="text-2xl font-semibold mb-4">Listado de Categorias</h2>
             <div className="flex gap-3 justify-center">
                 {uniqueCategories.map(item => (
                     <div 
@@ -55,7 +55,7 @@ function Categorias() {
                         className={`p-4 border rounded ${selectedCategory === item.category ? 'bg-blue-100' : 'bg-white'}`}
                         onClick={() => handleCategoryClick(item.category)}
                     >
-                        <h2 className="LinesTitle">{item.category}</h2>
+                        <h2 className="text-2xl font-semibold mb-4 text-center">{item.category}</h2>
                         <div className="images">
                             <center>
                                 <img 
@@ -68,7 +68,7 @@ function Categorias() {
                 ))}
             </div>
             <div className="Title text-center mt-8">
-                <h2>Listado de productos por categoria {categoryDescripcion}</h2>
+                <h2 className="text-2xl font-semibold mb-4">Listado de productos por categoria {categoryDescripcion}</h2>
             </div>
             <div ref={productsRef}></div>
             <div className="flex justify-center mt-4">
