@@ -2,7 +2,7 @@ import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 function Whatsapp() {
-    const whatsappNumber = "1168643378";
+    const whatsappNumber = "5491168643378";
 
     return (
         <div className="fixed bottom-4 right-4 z-50">

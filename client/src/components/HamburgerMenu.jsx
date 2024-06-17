@@ -75,7 +75,7 @@ window.addEventListener('scroll', changeColor);
                   </div>
                 ) : (
                   <NavLink to="/" className="text-lg hover:bg-gray-200 p-2 rounded">
-                    <p>Iniciar Sesión</p>
+                    <button className="m-6">Iniciar Sesión</button>
                   </NavLink>
                 )}
               </div>

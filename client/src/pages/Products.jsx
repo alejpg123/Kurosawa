@@ -6,6 +6,8 @@ import Filters from "../components/Filters";
 import AddSelectedProductsButton from "../components/AddSelectedProductsButton";
 import Footer from "../components/Footer";
 import Whatsapp from "../components/Whatsapp";
+import { FiTruck } from 'react-icons/fi';
+import { FaSpinner } from 'react-icons/fa';
 
 function Products() {
     const {
@@ -19,8 +21,14 @@ function Products() {
     } = useContext(productsContext);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+    const renderLoadingIndicator = () => (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-200 bg-opacity-75 z-50">
+            <FaSpinner className="animate-spin text-4xl text-gray-600" />
+        </div>
+    );
+
     if (isLoading) {
-        return <div>Cargando...</div>;
+        return renderLoadingIndicator();
     }
 
     if (error) {
@@ -40,6 +48,12 @@ function Products() {
             <Navbar />
             <div className="flex flex-col items-center justify-center flex-1 container mx-auto p-4">
                 <h2 className="text-4xl font-bold mb-4 text-center text-black">TODOS LOS PRODUCTOS</h2>
+                <div className="bg-black w-full text-white py-4 flex items-center justify-center mb-4">
+                <div className="flex items-center justify-center px-4">
+                    <FiTruck className="text-2xl mr-2" />
+                    <span>Envío gratis a todo el país a partir de $1.400.</span>
+                </div>
+        </div>
                 <div className="flex justify-center mb-4">
                     <div className="max-w-screen-lg w-full px-4">
                         <div className="flex justify-end mb-4">
