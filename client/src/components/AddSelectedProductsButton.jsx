@@ -15,8 +15,8 @@ function AddSelectedProductsButton() {
               addSelectedToCart();
             }
           }}
-            className="h-10 px-6 py-2 mt-2 text-white font-semibold rounded-md bg-indigo-600 hover:bg-indigo-500">
-            Agregar productos seleccionados al carrito
+            className="h-10 px-6 py-2 mt-2 text-white font-semibold rounded-md bg-custom-green-yellow hover:brightness-110">
+            Agregar productos seleccionados
         </button>
     );
 }

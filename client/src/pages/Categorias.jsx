@@ -3,6 +3,7 @@ import { productsContext } from "../context/ProductsContext";
 import Navbar from '../components/Navbar';
 import AddSelectedProductsButton from '../components/AddSelectedProductsButton';
 import Footer from "../components/Footer.jsx";
+import Whatsapp from "../components/Whatsapp.jsx"
 
 function Categorias() {
     const { user, products, addToCart, iniciaSesionAlert, addSelectedToCart, toggleSelectProduct, selectedProducts, addQuantity, restQuantity } = useContext(productsContext);
@@ -146,7 +147,7 @@ function Categorias() {
                                         </div>
                                         <button
                                             onClick={() => handleAddToCart(product)}
-                                            className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center"
+                                            className="py-2 px-4 bg-custom-coral text-white rounded hover:brightness-110 active:bg-custom-off-red disabled:opacity-50 mt-4 w-full flex items-center justify-center"
                                         >
                                             Agregar al carrito
                                             <svg
@@ -175,6 +176,7 @@ function Categorias() {
                 </div>
             </div>
             <Footer className="mt-auto" />
+            <Whatsapp />
         </div>
     );
 }

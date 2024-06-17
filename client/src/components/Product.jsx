@@ -21,7 +21,7 @@ function Product({ prod }) {
     return (
         <div 
             key={prod.id} 
-            className={`relative w-80 bg-white shadow rounded m-4 transform transition-transform duration-300 ${clicked ? 'bg-indigo-100' : ''} hover:-translate-y-2 hover:shadow-lg hover:shadow-gray-400`}
+            className={`relative w-80 bg-white shadow rounded m-4 transform transition-all duration-300 ${clicked ? 'bg-indigo-100 -translate-y-2 shadow-lg shadow-gray-400' : ''} hover:-translate-y-2 hover:shadow-lg hover:shadow-gray-400`}
             style={{ zIndex: 10 }}
         >
             <div
@@ -60,7 +60,7 @@ function Product({ prod }) {
                 </div>
                 <button
                     onClick={handleAddToCart}
-                    className={`h-10 px-6 py-2 mt-2 text-white font-semibold rounded-md ${clicked ? 'bg-indigo-500' : 'bg-indigo-600 hover:bg-indigo-500'} transition-colors duration-300`}
+                    className={`h-10 px-6 py-2 mt-2 text-white font-semibold rounded-md ${clicked ? 'bg-custom-off-red' : 'bg-custom-coral hover:brightness-110'} transition-colors duration-300`}
                 >
                     Agregar al carrito
                 </button>

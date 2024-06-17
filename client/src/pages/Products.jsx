@@ -5,6 +5,7 @@ import Product from "../components/Product";
 import Filters from "../components/Filters";
 import AddSelectedProductsButton from "../components/AddSelectedProductsButton";
 import Footer from "../components/Footer";
+import Whatsapp from "../components/Whatsapp";
 
 function Products() {
     const {
@@ -43,7 +44,7 @@ function Products() {
                     <div className="max-w-screen-lg w-full px-4">
                         <div className="flex justify-end mb-4">
                             <button
-                                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-300"
+                                className="px-4 py-2 bg-custom-green-yellow text-white rounded hover:brightness-110"
                                 onClick={() => setIsSidebarOpen(true)}
                             >
                                 Filtrar por
@@ -66,6 +67,7 @@ function Products() {
                 </div>
             </div>
             <Footer className="mt-auto" />
+            <Whatsapp />
         </div>
     );
 }

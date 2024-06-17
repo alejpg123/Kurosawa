@@ -7,10 +7,10 @@ function Footer() {
         <footer className="bg-gray-800 text-white py-8">
             <div className="container mx-auto text-center">
                 <div className="flex justify-center space-x-8 mb-6">
-                <Link to="/">Inicio</Link>
-                <Link to="/Products">Productos</Link>
-                <Link to="/Categorias">Categorias</Link>
-                <Link to="/Cart">Carrito</Link>
+                <Link to="/"> <button className='hover:bg-gray-600 rounded-sm p-1'>Inicio</button></Link>
+                <Link to="/Products"><button className='hover:bg-gray-600 rounded-sm p-1'>Productos</button></Link>
+                <Link to="/Categorias"><button className='hover:bg-gray-600 rounded-sm p-1'>Categorias</button></Link>
+                <Link to="/Cart"><button className='hover:bg-gray-600 rounded-sm p-1'>Carrito</button></Link>
                 </div>
                 <div className="flex flex-col items-center mb-6">
                     <div className="flex items-center mb-2">

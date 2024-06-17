@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
 import axios from "axios";
+import Whatsapp from "./Whatsapp";
 
 function Cart() {
     const { user, cart, removeFromCart, cleanCart, increaseQuantityInCart, decreaseQuantityInCart } = useContext(productsContext);
@@ -57,17 +58,17 @@ function Cart() {
                                                 <p>Cantidad: {item.quantity}</p>
                                                 <p>Precio: ${item.totalPrice.toFixed(2)}</p>
                                                 <div className="flex space-x-2 mt-2">
-                                                    <button className="px-2 py-1 bg-red-500 text-white rounded" onClick={() => removeFromCart(item.id)}>Borrar</button>
-                                                    <button className="px-2 py-1 bg-blue-500 text-white rounded" onClick={() => increaseQuantityInCart(item.id)}>+</button>
-                                                    <button className="px-2 py-1 bg-blue-500 text-white rounded" onClick={() => decreaseQuantityInCart(item.id)}>-</button>
+                                                    <button className="px-2 py-1 bg-custom-off-red hover:brightness-110 text-white rounded" onClick={() => removeFromCart(item.id)}>Borrar</button>
+                                                    <button className="px-2 py-1 bg-custom-blue-gray hover:brightness-110 text-white rounded" onClick={() => increaseQuantityInCart(item.id)}>+</button>
+                                                    <button className="px-2 py-1 bg-custom-blue-gray hover:brightness-110 text-white rounded" onClick={() => decreaseQuantityInCart(item.id)}>-</button>
                                                 </div>
                                             </div>
                                         </div>
                                     ))}
                                     <p className="font-semibold">Total carrito: ${getTotalCartPrice(cart)}</p>
-                                    <button className="px-4 py-2 bg-green-500 text-white rounded mt-4" onClick={handleBuy}>Realizar compra</button>
+                                    <button className="px-4 py-2 bg-custom-dark-green hover:brightness-110 text-white rounded mt-4 m-2" onClick={handleBuy}>Realizar compra</button>
                                     {preferenceId && <Wallet initialization={{ preferenceId: preferenceId }} />}
-                                    <button className="px-4 py-2 bg-red-500 text-white rounded mt-4" onClick={cleanCart}>Vaciar carrito</button>
+                                    <button className="px-4 py-2 bg-custom-off-red hover:brightness-110 text-white rounded mt-4 m-2" onClick={cleanCart}>Vaciar carrito</button>
                                 </>
                             ) : (
                                 <>
@@ -84,6 +85,7 @@ function Cart() {
                 </div>
             </div>
             <Footer className="mt-auto" />
+            <Whatsapp />
         </div>
     );
 }

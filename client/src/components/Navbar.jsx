@@ -24,14 +24,14 @@ function Navbar() {
         <>
             <nav className={color ? 'nav secondColor' : 'nav'}>
                 <div className="flex justify-between">
-                    <div className="float-left px-3.5 right-10">
+                    <div className="float-left px-3.5 right-10 opacity-100">
                     <HamburgerMenu />
                     </div>
-                    <div className="float-right">
+                    <div className="float-right opacity-100">
                     <Search />
                     </div>
                 </div>
-                <NavLink to={'/'} className="centerTitle hidden sm:block"><img src="./images/logo.png" alt="Logo Kurosawa" /></NavLink>
+                <NavLink to={'/'} className="opacity-100 centerTitle hidden sm:block"><img src="./images/logo.png" alt="Logo Kurosawa" /></NavLink>
                 <div className={color ? 'text-white' : 'text-black'}>
                     <NavLink to="/Cart"><ShoppingCartIcon /></NavLink>
                 </div>

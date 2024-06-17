@@ -7,6 +7,7 @@ import { productsContext } from "../context/ProductsContext.jsx";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase.js";
 import Footer from "../components/Footer.jsx";
+import Whatsapp from "../components/Whatsapp.jsx"
 
 function Home() {
   const { user, products, iniciaSesionAlert, addQuantity, restQuantity } = useContext(productsContext);
@@ -119,7 +120,7 @@ function Home() {
                             </div>
                             <button
                               onClick={() => handleAddToCart(product)}
-                              className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center"
+                              className="py-2 px-4 bg-custom-coral text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center"
                             >
                               Agregar al carrito
                               <svg
@@ -147,7 +148,7 @@ function Home() {
               <NavLink to="/products">
                 <div className="flex mt-4 text-center ">
                   <div className="m-auto max-w-screen-lg w-full">
-                    <button className="gap-1 h-10 px-6 py-2 mt-2 text-white font-semibold rounded-md bg-indigo-600 hover:bg-indigo-500">Ver más productos</button>
+                    <button className="gap-1 h-10 px-6 py-2 mt-2 text-white font-semibold rounded-md bg-custom-green-yellow hover:bg-indigo-500">Ver más productos</button>
                   </div>
                 </div>
               </NavLink>
@@ -189,8 +190,9 @@ function Home() {
         )}
       </main>
       <Footer className="mt-auto" />
+      <Whatsapp />
     </>
   );
-}
+} 
 
 export default Home;
