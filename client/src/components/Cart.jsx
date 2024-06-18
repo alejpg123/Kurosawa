@@ -51,21 +51,21 @@ function Cart() {
                             {derivedCart.length > 0 ? (
                                 <>
                                     {derivedCart.map((item) => (
-                                        <div key={item.id} className="flex items-center p-4 mb-4 bg-white rounded-lg shadow-md">
-                                            <img className="w-24 h-24 object-cover mr-4" src={item.thumbnail} alt={item.name} />
-                                            <div className="flex-1">
+                                        <div key={item.id} className="flex flex-col items-center p-4 mb-4 bg-white rounded-lg shadow-md text-center">
+                                            <img className="w-24 h-24 object-cover mb-4" src={item.thumbnail} alt={item.name} />
+                                            <div className="flex-1 space-y-2">
                                                 <p className="font-semibold">Producto: {item.name}</p>
                                                 <p>Cantidad: {item.quantity}</p>
                                                 <p>Precio: ${item.totalPrice.toFixed(2)}</p>
-                                                <div className="flex space-x-2 mt-2">
-                                                    <button className="px-2 py-1 bg-custom-off-red hover:brightness-110 text-white rounded" onClick={() => removeFromCart(item.id)}>Borrar</button>
-                                                    <button className="px-2 py-1 bg-custom-blue-gray hover:brightness-110 text-white rounded" onClick={() => increaseQuantityInCart(item.id)}>+</button>
-                                                    <button className="px-2 py-1 bg-custom-blue-gray hover:brightness-110 text-white rounded" onClick={() => decreaseQuantityInCart(item.id)}>-</button>
-                                                </div>
+                                            </div>
+                                            <div className="flex space-x-2 mt-2">
+                                                <button className="px-2 py-1 bg-custom-off-red hover:brightness-110 text-white rounded" onClick={() => removeFromCart(item.id)}>Borrar</button>
+                                                <button className="px-2 py-1 bg-custom-blue-gray hover:brightness-110 text-white rounded" onClick={() => increaseQuantityInCart(item.id)}>+</button>
+                                                <button className="px-2 py-1 bg-custom-blue-gray hover:brightness-110 text-white rounded" onClick={() => decreaseQuantityInCart(item.id)}>-</button>
                                             </div>
                                         </div>
                                     ))}
-                                    <p className="font-semibold">Total carrito: ${getTotalCartPrice(cart)}</p>
+                                    <p className="font-semibold text-2xl">Total carrito: ${getTotalCartPrice(cart)}</p>
                                     <button className="px-4 py-2 bg-custom-dark-green hover:brightness-110 text-white rounded mt-4 m-2" onClick={handleBuy}>Realizar compra</button>
                                     {preferenceId && <Wallet initialization={{ preferenceId: preferenceId }} />}
                                     <button className="px-4 py-2 bg-custom-off-red hover:brightness-110 text-white rounded mt-4 m-2" onClick={cleanCart}>Vaciar carrito</button>
@@ -74,7 +74,7 @@ function Cart() {
                                 <>
                                     <p className="text-2xl font-semibold mb-14 mt-14 ">Tu carrito está vacío.</p>
                                     <NavLink to="/products">
-                                        <button className="px-4 py-2 bg-blue-500 text-white rounded">¡Comienza a comprar!</button>
+                                        <button className="px-4 py-2 bg-custom-green-yellow hover:brightness-110 text-white rounded">¡Comienza a comprar!</button>
                                     </NavLink>
                                 </>
                             )}
